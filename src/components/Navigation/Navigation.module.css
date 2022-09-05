@@ -1,0 +1,148 @@
+.navigation {
+  position: relative;
+  width: 80%;
+  max-width: 1782px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-bottom: 1px solid hsl(223, 64%, 98%);
+}
+
+.navigation ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation ul li {
+  padding: 2rem 0 1rem 0;
+}
+
+.navigation ul li a {
+  text-decoration: none;
+  color: hsl(220, 14%, 75%);
+  font-size: 1rem;
+}
+
+.navigation ul li > a {
+  transition: all 0.2s;
+}
+
+.navigation ul li:hover > a {
+  border-bottom: 5px solid hsl(26, 100%, 55%);
+  color: hsl(219, 9%, 45%);
+  padding-bottom: 2.2rem;
+}
+
+.navigation ul.menu {
+  width: 50%;
+}
+
+.navigation ul.profile {
+  width: 100px;
+  align-items: center;
+}
+
+.navigation ul.profile .cart {
+  position: relative;
+  cursor: pointer;
+}
+
+.navigation ul.profile .cart .quantity {
+  position: absolute;
+  background-color: hsl(26, 100%, 55%);
+  font-size: 0.6rem;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 15px;
+  right: -0.9rem;
+  top: 1.3rem;
+}
+
+.navigation ul.profile .cart .quantity.expand1 {
+  animation: expand1 0.1s forwards ease-in;
+}
+
+.navigation ul.profile .cart .quantity.expand2 {
+  animation: expand2 0.1s forwards ease-out;
+}
+
+.navigation ul.profile .cart img {
+  width: 26px;
+}
+
+.navigation ul.profile .avatar {
+  width: 40px;
+}
+
+.navigation ul.profile .avatar img {
+  width: 100%;
+  border-radius: 100%;
+  border: 2px solid transparent;
+  transition: all .1s;
+  cursor: pointer;
+}
+
+.navigation ul.profile .avatar img:hover {
+  border: 2px solid hsl(26, 100%, 55%);
+}
+
+@media only screen and (max-width:992px) {
+  .navigation .menu li:not(:first-child) {
+    display: none;
+  }
+
+
+  .navigation .hamburger span {
+    content: '';
+    position: absolute;
+    left: 0;
+    display: block;
+    text-indent: -9999px;
+    background-color: red;
+    height: 0.5rem;
+    width: 100%;
+  }
+
+  .navigation .hamburger span::before,
+  .navigation .hamburger span::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    display: block;
+    text-indent: -9999px;
+    background-color: red;
+    height: 0.5rem;
+    width: 100%;
+  }
+
+}
+
+
+@keyframes expand1 {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes expand2 {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

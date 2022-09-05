@@ -1,0 +1,128 @@
+.backdrop {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  z-index: 2;
+}
+
+.overlay {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 3rem 2rem;
+}
+
+.images {
+  width: 50%;
+  max-width: 500px;
+}
+
+.images .image-main {
+  position: relative;
+}
+
+.images .image-main img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+.images .image-small {
+  margin: 2rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.images .image-small .image-wrapper img {
+  width: 100px;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-radius: 15px;
+}
+/* 
+.images .image-small .image-wrapper img.selected,
+.images .image-small .image-wrapper img:hover {
+  opacity: 0.4;
+} */
+
+.images .image-small .image-wrapper .hov {
+  background: rgba(256, 255, 256, 0.2);
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  opacity: 0;
+  border-radius: 15px;
+  transition: all 0.3s;
+}
+.images .image-small .image-wrapper.selected .hov,
+.images .image-small .image-wrapper:hover .hov {
+  opacity: 1;
+}
+
+.images .image-small .image-wrapper.selected .hov {
+  border: 2px solid hsl(26, 100%, 55%);
+  border-radius: 15px;
+  height: 98px;
+  width: 98px;
+}
+
+.images .image-main .navigate {
+  position: absolute;
+  top: 50%;
+  background: white;
+  border-radius: 100%;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+}
+
+.images .image-main .navigate svg {
+  position: absolute;
+  width: 15px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  stroke: #1d2026;
+  transition: all 0.1s;
+}
+
+.images .image-main .navigate svg:hover {
+  stroke: hsl(26, 100%, 55%);
+}
+
+.images .image-main .navigate.prev {
+  left: -1.5rem;
+}
+
+.images .image-main .navigate.prev:hover svg {
+  stroke: hsl(26, 100%, 55%);
+}
+
+.images .image-main .navigate.next {
+  right: -1.5rem;
+}
+
+.images .image-main .navigate.next:hover svg {
+  stroke: hsl(26, 100%, 55%);
+}
+
+.images .image-main .navigate.close {
+  right: -0.5rem;
+  top: -3rem;
+  background: unset;
+  border-radius: unset;
+}
+
+.images .image-main .navigate .change {
+  fill: #fff;
+  stroke: #fff;
+  transition: all 0.1s;
+}
+
+.images .image-main .navigate .change:hover {
+  fill: hsl(26, 100%, 55%);
+}
